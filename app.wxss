@@ -1,0 +1,20 @@
+/**app.wxss**/
+@import './miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+.container {
+  height: 100%;
+
+} 
+.scrollarea wx-button {
+  width: 96%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0;
+}
+
+.dialog-content input {
+  background-color: #efe8e8;
+  line-height: 70rpx;
+  height: 70rpx;
+  padding: 0 15rpx;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <loading wx:if="{{isLoading}}" />
+  
+  <block wx:for="{{processList}}" wx:key="name">
+    <view class="card">
+      <view class="info">
+        <view class="name">服务器：{{item.server}}</view>
+        <view class="name">进程名：{{item.name}}</view>
+        <view class="status">状态：{{item.statename}}</view>
+        <view class="start-time">启动时间：{{item.start}}</view>
+      </view>
+      <button class="log-btn" bindtap="viewLog" data-name="{{item.name}}">查看日志</button>
+    </view>
+  </block>
+  <button type="primary" bindtap="showDialog">添加服务器</button>
+  <view wx:if="{{showInputDialog}}" class="dialog">
+    <view class="dialog-content">
+      <text>服务器地址：</text>
+      <input placeholder="例如：192.168.1.100" bindinput="onInput" data-field="ip" />
+
+      <text>端口：</text>
+      <input placeholder="例如：9001" bindinput="onInput" data-field="port" />
+
+      <text>用户名：</text>
+      <input placeholder="例如：admin" bindinput="onInput" data-field="username" />
+
+      <text>密码：</text>
+      <input password placeholder="请输入密码" bindinput="onInput" data-field="password" />
+
+      <view class="btn-group">
+        <button size="mini" bindtap="cancelDialog">取消</button>
+        <button size="mini" type="primary" bindtap="confirmDialog">确定</button>
+      </view>
+    </view>
+  </view>
+  
+</scroll-view>
