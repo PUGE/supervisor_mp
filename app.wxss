@@ -9,7 +9,10 @@
   height: 80rpx;
   line-height: 80rpx;
   padding: 0;
+  margin-top: 10px;
 }
+
+
 
 .dialog-content input {
   background-color: #efe8e8;

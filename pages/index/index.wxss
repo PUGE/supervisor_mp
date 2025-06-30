@@ -47,7 +47,7 @@
   color: #333;
 }
 
-.scrollarea .log-btn {
+.scrollarea .btn {
   background-color: #1890ff;
   color: white;
   border: none;
@@ -59,4 +59,14 @@
   padding: 0;
   margin: 0;
   width: 100%;
+}
+
+.button-box {
+  display: flex;
+  margin-top: 10px;
+}
+
+.button-box .btn {
+  width: 23%;
+  margin: 0 1%;
 }

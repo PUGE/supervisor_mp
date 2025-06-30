@@ -1,0 +1,5 @@
+/* pages/logs.wxss */
+#show {
+  margin: 0 1%;
+  width: 98%;
+}

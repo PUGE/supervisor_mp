@@ -1,2 +1,2 @@
-<!--pages/logs/logs.wxml-->
-<text>pages/logs/logs.wxml</text>
+<!--pages/logs.wxml-->
+<text id="show" user-select>{{showText}}</text>

@@ -9,8 +9,16 @@
         <view class="name">进程名：{{item.name}}</view>
         <view class="status">状态：{{item.statename}}</view>
         <view class="start-time">启动时间：{{item.start}}</view>
+        <view class="description">状态：{{item.description}}</view>
       </view>
-      <button class="log-btn" bindtap="viewLog" data-name="{{item.name}}">查看日志</button>
+      <div class="button-box">
+        <button class="btn" bindtap="sendEnv" wx:if="{{item.statename!='RUNNING'}}" bindtap="startPro" data-name="{{item.name}}" data-ip="{{item.server}}" data-port="{{item.port}}" data-username="{{item.username}}" data-password="{{item.password}}" data-type="start">启动</button>
+        <button class="btn" bindtap="sendEnv" data-name="{{item.name}}" data-ip="{{item.server}}" data-port="{{item.port}}" data-username="{{item.username}}" data-password="{{item.password}}" data-type="restart">重启</button>
+        <button class="btn" bindtap="sendEnv" wx:if="{{item.statename=='RUNNING'}}" data-name="{{item.name}}" data-ip="{{item.server}}" data-port="{{item.port}}" data-username="{{item.username}}" data-password="{{item.password}}" data-type="stop">结束</button>
+        <button class="btn" bindtap="viewLog" data-name="{{item.name}}" data-ip="{{item.server}}" data-port="{{item.port}}" data-username="{{item.username}}" data-password="{{item.password}}" data-type="readProcessStdoutLog">日志输出</button>
+        <button class="btn" bindtap="viewLog" data-name="{{item.name}}" data-ip="{{item.server}}" data-port="{{item.port}}" data-username="{{item.username}}" data-password="{{item.password}}" data-type="readProcessStderrLog">错误日志</button>
+      </div>
+      
     </view>
   </block>
   <button type="primary" bindtap="showDialog">添加服务器</button>
